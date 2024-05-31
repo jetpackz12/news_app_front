@@ -40,6 +40,13 @@ export default {
       input_search: "",
     };
   },
+  watch: {
+    is_modal_visible(newVal) {
+      if (newVal === true) {
+        this.input_search = "";
+      }
+    },
+  },
   methods: {
     triggerModal() {
       this.$emit("addModal");
