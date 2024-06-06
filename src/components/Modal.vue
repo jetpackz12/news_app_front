@@ -223,7 +223,7 @@ export default {
       };
 
       await axios
-        .post("http://127.0.0.1:8080/api/store", render_data)
+        .post("/api/store", render_data)
         .then((response) => {
           this.clearInputFields();
           this.triggerModal();
@@ -237,7 +237,7 @@ export default {
       formData.append("image", this.image);
 
       await axios
-        .post("http://127.0.0.1:8080/api/upload", formData, {
+        .post("/api/upload", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((response) => {
@@ -271,7 +271,7 @@ export default {
       };
 
       await axios
-        .post("http://127.0.0.1:8080/api/update", render_data)
+        .post("/api/update", render_data)
         .then((response) => {
           this.triggerModal();
         })
@@ -293,7 +293,7 @@ export default {
       };
 
       await axios
-        .post("http://127.0.0.1:8080/api/destroy", render_data)
+        .post("/api/destroy", render_data)
         .then((response) => {
           this.triggerModal();
         })
@@ -308,7 +308,7 @@ export default {
         };
 
         await axios
-          .post("http://127.0.0.1:8080/api/edit", render_data)
+          .post("/api/edit", render_data)
           .then((response) => {
             this.title = response.data.title;
             this.link = response.data.link;
